@@ -4,5 +4,5 @@
 # Commands:
 
 module.exports = (robot) ->
-  robot.respond /PONG$/i, (msg) ->
+  robot.hear /PONG$/i, (msg) ->
     msg.send "PING"
