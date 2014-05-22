@@ -36,5 +36,4 @@ module.exports = (robot) ->
   r = new RegExp ".*--.*", "i"
   robot.hear r, lost_points
 
-  r = new RegExp ".*op.*", "i"
-  robot.hear r, gain_points
+  robot.hear /(.*)\+\+(.*)/i, gain_points
