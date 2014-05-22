@@ -9,6 +9,3 @@ module.exports = (robot) ->
 
  	robot.hear /PING$/i, (msg) ->
  		msg.send "PONG"
-
- 	robot.hear /gnubot.*/i, (msg) ->
-  		msg.send "DO NOT TRUST THE ENEMY"
