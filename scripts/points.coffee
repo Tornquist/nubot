@@ -17,13 +17,6 @@ badMessages = [
 
 goodMessages = [
   "It really wasn't that good.  You're being too generous."
-  "Make it rain"
-  "\+1"
-  "Have a gold star!"
-  "Really? That was mediocre at best."
-  "Go team!"
-  "Boiler Up!"
-  "It's about time."
 ]
 
 lost_points = (msg) ->
