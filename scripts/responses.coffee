@@ -44,7 +44,7 @@ module.exports = (robot) ->
 		else if rand == 5
 			msg.send "Really? That was mediocre at best."
 		else if rand == 6
-			msg.send ":smile:"
+			msg.send ":)"
 		else if rand == 7
 			msg.send "Go team!"
 		else if rand == 8
