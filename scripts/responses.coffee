@@ -11,4 +11,4 @@ module.exports = (robot) ->
  		msg.send "PONG"
 	
 	robot.hear /gnubot.*/i, (msg) ->
-  		msg.send "DO NOT TRUST THE ENEMY
+  		msg.send "DO NOT TRUST THE ENEMY"
