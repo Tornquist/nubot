@@ -36,5 +36,5 @@ module.exports = (robot) ->
   r = new RegExp ".*--.*", "i"
   robot.hear r, lost_points
 
-  r = new RegExp ".*op.*", "i"
+  r = new RegExp "(\S+[^+:\s])[: ]*\+\+(\s|$)", "i"
   robot.hear r, gain_points
