@@ -10,9 +10,6 @@ module.exports = (robot) ->
  	robot.hear /PING$/i, (msg) ->
  		msg.send "PONG"
  
-    robot.hear /gnubot.*/i, (msg) ->
-  		msg.send "DO NOT TRUST THE ENEMY"
-
 	robot.hear /.*--.*/i, (msg) ->
 		rand = Math.floor(Math.random() * 10) + 1
 		if rand == 1
