@@ -5,5 +5,4 @@
 
 module.exports = (robot) ->
 	robot.hear /.*\+\+.*/i, (msg) ->
-		rand2 = Math.floor(Math.random() * 10) + 1
   		msg.send "It's about time."
