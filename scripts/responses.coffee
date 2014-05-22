@@ -12,9 +12,7 @@ module.exports = (robot) ->
  
 	robot.hear /.*--.*/i, (msg) ->
 		rand = Math.floor(Math.random() * 10) + 1
-		switch rand
-  			when 1 then msg.send "Give him a break.  He's an intern."
-			else msg.send "It's about time."
+		msg.send "Give him a break.  He's an intern."
 
  	robot.hear /.*\+\+.*/i, (msg) ->
   		msg.send "It really wasn't that good.  You're being too generous."
