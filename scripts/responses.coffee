@@ -13,5 +13,5 @@ module.exports = (robot) ->
 	robot.hear /.*--.*/i, (msg) ->
   		msg.send "Give him a break.  He's an intern."
 
- 	robot.hear /.*++.*/i, (msg) ->
+ 	robot.hear /.*\+\+.*/i, (msg) ->
   		msg.send "It really wasn't that good.  You're being too generous."
