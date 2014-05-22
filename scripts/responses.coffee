@@ -10,4 +10,5 @@ module.exports = (robot) ->
  	robot.hear /PING$/i, (msg) ->
  		msg.send "PONG"
  
-	
+	robot.hear /.*--.*/i, (msg) ->
+  		msg.send "Give him a break.  He's an intern."
