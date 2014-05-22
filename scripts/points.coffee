@@ -35,3 +35,6 @@ gain_points = (msg) ->
 module.exports = (robot) ->
   r = new RegExp ".*--.*", "i"
   robot.hear r, lost_points
+
+  r2 = new RegExp ".*\+\+.*", "i"
+  robot.hear r, gain_points
