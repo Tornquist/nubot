@@ -15,7 +15,7 @@ badMessages = [
   "It's about time."
 ]
 
-goodMessage = [
+goodMessages = [
   "It really wasn't that good.  You're being too generous."
   "Make it rain"
   "\+1"
