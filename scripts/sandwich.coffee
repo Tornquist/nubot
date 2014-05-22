@@ -20,7 +20,7 @@ sandwich = [
 
 module.exports = (robot) ->
 
-  regex = /sudo\s*sandwich/i
+  regex = /sudo.*sandwich.*/i
 
   robot.hear regex, (msg) ->
     msg.send msg.random sandwich
