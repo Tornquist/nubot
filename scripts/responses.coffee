@@ -30,9 +30,6 @@ module.exports = (robot) ->
 			msg.send "hahahahahaha"
 		else
 			msg.send "It's about time."
-
-	robot.hear /.*\+\+.*/i, (msg) ->
-		msg.send "It really wasn\'t that good.  You\'re being too generous."
-
+			
     robot.hear /gnubot.*/i, (msg) ->
   		msg.send "DO NOT TRUST THE ENEMY"
