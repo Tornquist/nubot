@@ -12,6 +12,6 @@ module.exports = (robot) ->
 	
 	robot.hear /gnubot.*/i, (msg) ->
   		msg.send "DO NOT TRUST THE ENEMY
-
-  	robot.hear /sudo .*/i, (msg) ->
+  	
+  	robot.hear /sudo.*/i, (msg) ->
   		msg.send "Admin access denied"
