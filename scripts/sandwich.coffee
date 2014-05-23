@@ -20,13 +20,15 @@ sandwich = [
 
 module.exports = (robot) ->
 
+  sudo = /.*sudo.*/i.match(msg)
+  if sudo
+    msg.send "SUDO FOUND"
+  
   regex = /.*sudo make me a sandwich.*/i
   a = 0
   robot.hear regex, (msg) ->
     msg.send msg.random sandwich
     a = 1
-  b = '' + a
-  msg.send b
   if a == 0
     regex = /^.*make me a sandwich.*/i
 
