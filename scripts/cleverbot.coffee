@@ -20,5 +20,6 @@ module.exports = (robot) ->
 
   robot.respond /c (.*)/i, (msg) ->
     data = msg.match[1].trim()
+    msg.send "My copy"
     c.write(data, (c) => msg.send(c.message))
 
