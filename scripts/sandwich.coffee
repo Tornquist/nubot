@@ -25,7 +25,7 @@ module.exports = (robot) ->
   robot.hear regex, (msg) ->
     msg.send msg.random sandwich
     a = 1
-
+  msg.send a
   if (a == 0)
     regex = /^.*make me a sandwich.*/i
 
