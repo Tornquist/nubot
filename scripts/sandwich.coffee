@@ -25,7 +25,7 @@ module.exports = (robot) ->
   robot.hear regex, (msg) ->
     msg.send msg.random sandwich
 
-  regex = /^.*(?!(sudo)) make me a sandwich.*/i
+  regex = /^.*(?!(sudo))+ *make me a sandwich.*/i
 
   robot.hear regex, (msg) ->
     msg.send "You have no authority here"
