@@ -25,12 +25,9 @@ module.exports = (robot) ->
     msg.send "SUDO FOUND"
   
   regex = /.*sudo make me a sandwich.*/i
-  a = 0
   robot.hear regex, (msg) ->
     msg.send msg.random sandwich
-    a = 1
-  if a == 0
-    regex = /^.*make me a sandwich.*/i
-
-    robot.hear regex, (msg) ->
-      msg.send "You have no authority here"
+    
+  regex = /^.*make me a sandwich.*/i
+  robot.hear regex, (msg) ->
+    msg.send "You have no authority here"
