@@ -8,7 +8,6 @@
 #   None
 #
 # Commands:
-#   hubot c <input>
 #
 # Author:
 #   ajacksified
