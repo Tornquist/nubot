@@ -2,8 +2,8 @@
 #   Utility commands surrounding Hubot uptime.
 #
 # Commands:
-#   hubot ping - Reply with pong
-#   hubot die - End hubot process
+#   nubot ping - Reply with pong
+#   nubot die - Kill nubot
 
 module.exports = (robot) ->
   robot.respond /PING$/i, (msg) ->
