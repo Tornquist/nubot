@@ -13,6 +13,9 @@ module.exports = (robot) ->
     msg.send robot.adapterName
 
   robot.respond /DIE$/i, (msg) ->
-    msg.send "Goodbye, cruel world."
+    msg.send "It's not that easy to get rid of me."
+    #process.exit 0
+  robot.respond /SHUTDOWN$/i, (msg) ->
+    msg.send "Shutting Down."
     process.exit 0
 
