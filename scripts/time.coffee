@@ -34,6 +34,8 @@ say_joke = (msg) ->
       setTimeout ->
         msg.send "#{ joke.answer }"
        , 4000
+    else
+      msg.send "Time to get a watch."
 
 process_time = (msg,location) ->
   msg.http(process.env.HUBOT_WWO_API_URL)

@@ -19,6 +19,8 @@ say_joke = (msg) ->
       setTimeout ->
         msg.send "#{ joke.answer }"
        , 4000
+    else
+      msg.send "I'm not really in the mood for humor."
 
 module.exports = (robot) ->
   robot.respond /(jokel|jokels|joke)/i, (msg) ->
