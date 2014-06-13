@@ -64,3 +64,5 @@ module.exports = (robot) ->
       msg.send 'Please, set HUBOT_WWO_API_URL environment variable'
       return
     process_time(msg)
+  robot.respond /what time is it/i, (msg) ->
+    msg.send msg
