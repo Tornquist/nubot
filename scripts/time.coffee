@@ -53,7 +53,8 @@ module.exports = (robot) ->
           result = JSON.parse(body)['data']
           city = result['request'][0]['query']
           currentTime = result['time_zone'][0]['localtime'].slice 11
-          msg.send "Minutes: #{currentTime.split(':')[1]}"
+          min = parseInt(currentTime.split(':')[1])
+          msg.send "#{min}"
           msg.send "Current time in #{city} ==> #{currentTime}"
         catch error
           msg.send "Sorry, no city found. Please, check your input and try it again"
