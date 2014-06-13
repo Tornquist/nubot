@@ -21,5 +21,5 @@ say_joke = (msg) ->
 
 module.exports = (robot) ->
   robot.respond /(jokel|jokels|joke)/i, (msg) ->
-    say_joke()
+    say_joke(msg)
 
