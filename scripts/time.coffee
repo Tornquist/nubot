@@ -34,6 +34,27 @@ say_joke = (msg) ->
       msg.send "#{ joke.answer }"
      , 4000
 
+process_time = (msg) ->
+  msg.http(process.env.HUBOT_WWO_API_URL)
+    .query({
+      q: msg.match[1]
+      key: process.env.HUBOT_WWO_API_KEY
+      format: 'json'
+    })
+    .get() (err, res, body) ->
+      try
+        result = JSON.parse(body)['data']
+        city = result['request'][0]['query']
+        currentTime = result['time_zone'][0]['localtime'].slice 11
+        min = parseInt(currentTime.split(':')[1])
+        if min > 25 && min < 35
+          msg.send "It's joke-thirty!"
+          say_joke(msg)
+        else
+          msg.send "Current time in #{city} ==> #{currentTime}"
+      catch error
+        msg.send "Sorry, no city found. Please, check your input and try it again"
+
 module.exports = (robot) ->
   robot.respond /time in (.*)/i, (msg) ->
     unless process.env.HUBOT_WWO_API_KEY
@@ -42,23 +63,4 @@ module.exports = (robot) ->
     unless process.env.HUBOT_WWO_API_URL
       msg.send 'Please, set HUBOT_WWO_API_URL environment variable'
       return
-    msg.http(process.env.HUBOT_WWO_API_URL)
-      .query({
-        q: msg.match[1]
-        key: process.env.HUBOT_WWO_API_KEY
-        format: 'json'
-      })
-      .get() (err, res, body) ->
-        try
-          result = JSON.parse(body)['data']
-          city = result['request'][0]['query']
-          currentTime = result['time_zone'][0]['localtime'].slice 11
-          min = parseInt(currentTime.split(':')[1])
-          if min > 25 && min < 35
-            msg.send "It's joke-thirty!"
-            say_joke(msg)
-          else
-            msg.send "Current time in #{city} ==> #{currentTime}"
-        catch error
-          msg.send "Sorry, no city found. Please, check your input and try it again"
-
+    process_time(msg)
