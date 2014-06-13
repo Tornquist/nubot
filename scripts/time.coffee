@@ -54,8 +54,11 @@ module.exports = (robot) ->
           city = result['request'][0]['query']
           currentTime = result['time_zone'][0]['localtime'].slice 11
           min = parseInt(currentTime.split(':')[1])
-          msg.send "#{min}"
-          msg.send "Current time in #{city} ==> #{currentTime}"
+          if min > 25 && min < 35
+            msg.send "It's joke-thirty!"
+            say_joke(msg)
+          else
+            msg.send "Current time in #{city} ==> #{currentTime}"
         catch error
           msg.send "Sorry, no city found. Please, check your input and try it again"
 
