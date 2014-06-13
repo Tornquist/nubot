@@ -34,10 +34,10 @@ say_joke = (msg) ->
       msg.send "#{ joke.answer }"
      , 4000
 
-process_time = (msg) ->
+process_time = (msg,location) ->
   msg.http(process.env.HUBOT_WWO_API_URL)
     .query({
-      q: msg.match[1]
+      q: location
       key: process.env.HUBOT_WWO_API_KEY
       format: 'json'
     })
@@ -57,13 +57,13 @@ process_time = (msg) ->
 
 module.exports = (robot) ->
   robot.respond /time in (.*)/i, (msg) ->
-    msg.send "#{msg.match[1]}"
     unless process.env.HUBOT_WWO_API_KEY
       msg.send 'Please, set HUBOT_WWO_API_KEY environment variable'
       return
     unless process.env.HUBOT_WWO_API_URL
       msg.send 'Please, set HUBOT_WWO_API_URL environment variable'
       return
-    process_time(msg)
+    location = msg.match[1]
+    process_time(msg, location)
   robot.respond /what time is it?/i, (msg) ->
-    msg.send "#{msg}"
+    process_time(msg, "Chicago")
