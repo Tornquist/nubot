@@ -57,6 +57,7 @@ process_time = (msg) ->
 
 module.exports = (robot) ->
   robot.respond /time in (.*)/i, (msg) ->
+    msg.send msg
     unless process.env.HUBOT_WWO_API_KEY
       msg.send 'Please, set HUBOT_WWO_API_KEY environment variable'
       return
@@ -64,5 +65,5 @@ module.exports = (robot) ->
       msg.send 'Please, set HUBOT_WWO_API_URL environment variable'
       return
     process_time(msg)
-  robot.respond /what time is it/i, (msg) ->
+  robot.respond /what time is it?/i, (msg) ->
     msg.send msg
