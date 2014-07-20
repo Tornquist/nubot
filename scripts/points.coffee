@@ -32,8 +32,8 @@ lost_points = (msg) ->
 gain_points = (msg) ->
   msg.send msg.random goodMessages
 
-#module.exports = (robot) ->
-#  r = new RegExp ".*--.*", "i"
-#  robot.hear r, lost_points
+module.exports = (robot) ->
+  r = new RegExp ".*--.*", "i"
+  robot.hear r, lost_points
 
-#  robot.hear /(.*)\+\+(.*)/i, gain_points
+  robot.hear /(.*)\+\+(.*)/i, gain_points
